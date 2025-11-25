@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    这是登录页面的布局文件
+    ScrollView：可滚动的容器（防止小屏手机内容显示不全）
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- 线性布局：从上到下依次排列控件 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- 标题：欢迎登录 -->
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="欢迎登录"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginTop="40dp" />
+
+        <!-- 副标题：提示语 -->
+        <TextView
+            android:id="@+id/tv_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请登录您的账户"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp" />
+
+        <!-- 账号输入框 -->
+        <EditText
+            android:id="@+id/et_username"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="32dp"
+            android:background="@android:drawable/edit_text"
+            android:paddingLeft="12dp"
+            android:hint="请输入账号"
+            android:textSize="16sp" />
+
+        <!-- 密码输入框 -->
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:drawable/edit_text"
+            android:paddingLeft="12dp"
+            android:hint="请输入密码"
+            android:inputType="textPassword"
+        android:textSize="16sp" />
+
+        <!-- 忘记密码 文本（先只做UI，后面可加功能） -->
+        <TextView
+            android:id="@+id/tv_forget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="忘记密码？"
+            android:textSize="12sp"
+            android:textColor="#2F80ED"
+            android:layout_gravity="right"
+            android:layout_marginTop="8dp" />
+
+        <!-- 登录按钮 -->
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="登录"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#2F80ED"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <!-- 分割文字：或 -->
+        <TextView
+            android:id="@+id/tv_or"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="或使用以下方式登录"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:layout_marginTop="24dp" />
+
+        <!-- 微信 / Apple 登录区域 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="16dp">
+
+            <!-- 微信登录：用 LinearLayout 当按钮 -->
+            <LinearLayout
+                android:id="@+id/btn_wechat"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="#F2F2F2"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <!-- 左侧小图标，自己控制大小 -->
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/icon_wechat"
+                    android:scaleType="centerInside" />
+
+                <!-- 左右留一点空隙 -->
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="1dp" />
+
+                <!-- 文字 -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="微信登录"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- 中间空隙 -->
+            <View
+                android:layout_width="16dp"
+                android:layout_height="1dp" />
+
+            <!-- Apple 登录，同样的结构 -->
+            <LinearLayout
+                android:id="@+id/btn_apple"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="#F2F2F2"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/icon_apple"
+                    android:scaleType="centerInside" />
+
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="1dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apple 登录"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <!-- 底部注册提示 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="还没有账户？" />
+
+            <TextView
+                android:id="@+id/tv_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="立即注册"
+                android:textColor="#2F80ED"
+                android:layout_marginLeft="4dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    一个简单的圆形背景，用在头像 ImageView 上
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <!-- 设置圆形的大小，大约 72dp*72dp，这里也可以不写，用 ImageView 控制 -->
+    <size
+        android:width="72dp"
+        android:height="72dp" />
+
+    <!-- 填充颜色（白色，可自己改成浅灰色等） -->
+    <solid android:color="#FFFFFF" />
+
+</shape>
